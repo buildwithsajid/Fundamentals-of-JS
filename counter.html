@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTER</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+    .frame{
+        background-color:rgb(42, 42, 137);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        text-align: center;
+        height: 300px;
+        width: 300px;
+        /* display: flex;
+        justify-content: center; */
+        box-sizing: border-box;
+        border-radius: 20px;
+        border: 2px solid white;
+        margin: 30px;
+        /* box-shadow: -5px 5px 1px white; */
+    }
+    .countlabel{
+        font-size: 70px;
+        height: 100px;
+        width: 250px;
+        border: 1px solid rgb(255, 255, 255);
+        margin: 8%;
+        border-radius: 15px;
+        display: block;
+        /* box-shadow: -5px -2px 1px white; */
+    }
+    .btns{
+        display: flex;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    button{
+        border-radius: 20px;
+        height: 60px;
+        margin: 5px;
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+    }
+    button:hover{
+        scale: 110%;
+    }
+    .decbtn{
+        background-color: red;
+        color: white;
+    }
+    .incbtn{
+        background-color: green;
+        color: white;
+    }
+</style>
+<body>
+    <div class="frame">
+    <label class="countlabel" id="countlabel">START</label>
+    <div class="btns">
+        <button class="decbtn" id="decreasebtn">DECREASE</button>
+        <button class="resbtn" id="resetbtn">RESET</button>
+        <button class="incbtn" id="increasebtn">INCREASE</button>
+    </div>
+    </div>
+    <script>
+        const decreasebtn= document.getElementById("decreasebtn");
+        const resetbtn= document.getElementById("resetbtn");
+        const increasebtn= document.getElementById("increasebtn");
+        const countlabel= document.getElementById("countlabel");
+        let count=0;
+        
+        increasebtn.onclick = function(){
+            count++;
+            countlabel.textContent= count
+        }
+        decreasebtn.onclick = function(){
+            count--;
+            countlabel.textContent= count
+        }
+        resetbtn.onclick = function(){
+            count=0;
+            countlabel.textContent= "START";
+        }
+    </script>
+</body>
+</html>
