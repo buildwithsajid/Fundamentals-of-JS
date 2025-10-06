@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    background-color: thistle;
+    padding: 0;
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.frame{
+    background-color: white;
+    height: 300px;
+    width: 250px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: none;
+    border-color: white;
+    border: 2px solid rgba(77, 76, 76, 0.386);
+    box-shadow: 1px 1px 10px #00000092, -1px -1px 10px rgba(0, 0, 0, 0.587) ;
+}
+</style>
+<body>
+    <div class="frame">
+        <div class="form">
+            <label>Enter the Number: </label>
+            <input type="number" id="takeinput" min="1" max="100">
+            <!-- <button onclick="GetFactorial()">Get Factorial</button> -->
+             <button type="submit" id="MySubmit">Submit</button>
+            <p id="resultElement"></p>
+        </div>
+    </div>
+   <script>
+    const numbers = document.getElementById("takeinput").value;
+    // value = Number(value);
+    const MySubmit= document.getElementById("MySubmit");
+    const resultElement=document.getElementById("resultElement")
+    const facted = numbers **2;
+    MySubmit.onclick = function(){
+        resultElement.textContent = `The factorial of ${numbers} is ${facted}`
+    }
+   </script> 
+</body>
+</html>
