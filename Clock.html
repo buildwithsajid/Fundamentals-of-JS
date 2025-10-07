@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+
+body{
+    margin: 0;
+    background-color: #1d3557;
+    color: rgba(255, 255, 255, 0.781);
+    overflow: hidden;
+}
+.frame{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#clock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock{
+    font-family: monospace;
+    font-size: 6rem;
+    background-color: #457b9d;
+    padding: 5px 10px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.315);
+}
+
+#date{
+    font-size: 3rem;
+    text-align: center;
+    position: sticky;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+h1{
+    font-family: monospace;
+    font-size: 1rem;
+    text-align: end;
+    margin-right: 10px;
+}
+
+</style>
+<body>
+    <h1>Made By Sajid Khan</h1>
+    <div class="frame">
+        <div id="date">0000-00-00</div>
+        <div id="clock-container">
+            <div id="clock">00:00:00</div>
+        </div>
+    </div>
+
+<script>
+
+    function updateClock(){
+    //For Date
+    const now = new Date();
+    const day = now.getDate();
+    const Year = now.getFullYear();
+    const Month = (now.getMonth()+1).toString().padStart(2,0);
+
+    const datestring = (`${day}-${Month}-${Year}`)
+    //For Hours
+    let hours = now.getHours();
+    const meridiem = hours > 12 ? "PM":"AM";
+    hours = hours % 12 || 12;
+    hours = hours.toString().padStart(2,0);
+    const minutes = now.getMinutes().toString().padStart(2,0);
+    const seconds = now.getSeconds().toString().padStart(2,0);
+    const timestring = `${hours}:${minutes}:${seconds}  ${meridiem}`
+    document.getElementById("clock").textContent=timestring;
+    document.getElementById("date").textContent=datestring;
+}
+updateClock();
+setInterval(updateClock , 1000);
+
+</script>
+<!-- <script src="script.js"></script> -->
+</body>
+</html>
