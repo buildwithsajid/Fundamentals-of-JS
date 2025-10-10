@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgb(8, 126, 45);
+        font-family:Verdana;
+        text-align: center;
+    }
+    #MyBtn{
+        padding: 10px 20px;
+        border-radius: 20px;
+        border-radius: none;
+        transform: color 2s;
+        color: red;
+        font-weight: 300;
+        font-size: large;
+    }
+    #MyLabel{
+        font-size: 3em;
+    }
+    #MyLabe2{
+        font-size: 3em;
+    }
+    #MyLabe3{
+        font-size: 3em;
+    }
+    .labels{
+        border: 2px solid black;
+        height: 50px;
+        width: 50px;
+        border-radius: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: red;
+        color: aliceblue;
+        font-size: larger;
+        font-weight: bold;
+    }
+    .labelsdiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        gap:10px;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <Button id="MyBtn">Roll Me</Button><br>
+    <div class="labelsdiv">
+    <label id="MyLabel1" class="labels"></label><br>
+    <label id="MyLabel2" class="labels"></label><br>
+    <label id="MyLabel3" class="labels"></label><br>
+    </div>
+    <script>
+        const MyBtn= document.getElementById("MyBtn");
+        const MyLabel1= document.getElementById("MyLabel1");
+        const MyLabel2= document.getElementById("MyLabel2");
+        const MyLabel3= document.getElementById("MyLabel3");
+        const min =1;
+        const max =6;
+        let randomNum1;
+        let randomNum2;
+        let randomNum3;
+
+        MyBtn.onclick=function(){
+            randomNum1 = Math.floor(Math.random() * max)+min;
+            MyLabel1.textContent=randomNum1;
+            randomNum2 = Math.floor(Math.random() * max)+min;
+            MyLabel2.textContent=randomNum2;
+            randomNum3 = Math.floor(Math.random() * max)+min;
+            MyLabel3.textContent=randomNum3;
+        }
+    </script>
+</body>
+
+</html>
